@@ -18,6 +18,20 @@
 *     sum(a)(b)  и возвращать сумму двух чисел
 *   Например  sum(3)(1) -> 4  , sum(7)(-1) -> 6
 * */
+function sum(a) {
+		var result = a;
+
+		function sum2(b) {
+			result += b;
+			return sum2;
+		}
+		sum2.toString = function () {
+			return result;
+		}
+		return sum2;
+	}
+console.log(sum(3)(1)); // 4
+console.log(sum(7)(-1)); // 6
 
 
 </script>

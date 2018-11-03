@@ -44,11 +44,16 @@ var d = document,
         els = list.getElementsByTagName('li'),
         len = els.length;
 
-for (var i = 0; i < len; i++) {
-    els[i].onclick = function(){
-        alert(i);
-    };
+function alertLiNumber() {
+	for (var i = 0; i < len; i++) {
+		(function(i) {
+			els[i].onclick = function () {
+				alert(i+1);
+			};
+		})(i);
+	}
 }
+alertLiNumber();
 
 
 
